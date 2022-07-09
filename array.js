@@ -90,3 +90,25 @@
       (item, index) => arr.indexOf(JSON.stringify(item)) === index
     );
   });
+!Array.prototype.camelCase &&
+  (Array.prototype.camelCase = function ({
+    preserveConsecutiveUppercase = false,
+  } = {}) {
+    return this.filter((str) => typeof str == "string" && str.length > 0)
+      .join("_")
+      .toCamelCase({ preserveConsecutiveUppercase });
+  });
+!Array.prototype.pascalCase &&
+  (Array.prototype.pascalCase = function ({
+    preserveConsecutiveUppercase = false,
+  } = {}) {
+    return this.filter((str) => typeof str == "string" && str.length > 0)
+      .join("_")
+      .toPascalCase({ preserveConsecutiveUppercase });
+  });
+!Array.prototype.snakeCase &&
+  (Array.prototype.snakeCase = function () {
+    return this.filter((str) => typeof str == "string" && str.length > 0).join(
+      "_"
+    );
+  });
