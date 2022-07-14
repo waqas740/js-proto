@@ -36,9 +36,9 @@
     return Object.assign({}, this);
   });
 !Object.prototype.merge &&
-  (Object.prototype.merge = function (objects) {
+  (Object.prototype.merge = function () {
     var _this = Object.assign({}, this);
-    arguments.forEach(function (obj) {
+    Array.from(arguments).forEach(function (obj) {
       Object.assign(_this, obj);
     });
     return _this;
@@ -55,20 +55,14 @@
   (Object.prototype.values = function () {
     return Object.values(this);
   });
-!Object.prototype.FLUpperCase &&
-  (Object.prototype.FLUpperCase = function () {
+!Object.prototype.firstCharUpperCase &&
+  (Object.prototype.firstCharUpperCase = function () {
     Object.key(this).forEach((key) => {
-      this[key.toFLUpperCase()];
+      this[key.firstCharUpperCase()];
       delete this[key];
     });
   });
-!Object.prototype.FLLowerCase &&
-  (Object.prototype.FLLowerCase = function () {
-    Object.key(this).forEach((key) => {
-      this[key.toFLLowerCase()];
-      delete this[key];
-    });
-  });
+
 !Object.prototype.lowerCase &&
   (Object.prototype.lowerCase = function () {
     Object.key(this).forEach((key) => {

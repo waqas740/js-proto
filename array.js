@@ -1,15 +1,16 @@
-!Array.prototype.toFLUpperCase &&
-  (Array.prototype.toFLUpperCase = function () {
+!Array.prototype.toCapitalize &&
+  (Array.prototype.toCapitalize = function () {
     return this.map((str) =>
-      typeof str == "string" ? str.toFLUpperCase() : str
+      typeof str == "string" ? str.toCapitalize() : str
     );
   });
-!Array.prototype.toFLLowerCase &&
-  (Array.prototype.toFLLowerCase = function () {
+!Array.prototype.toProperCase &&
+  (Array.prototype.toProperCase = function () {
     return this.map((str) =>
-      typeof str == "string" ? str.toFLLowerCase() : str
+      typeof str == "string" ? str.toProperCase() : str
     );
   });
+
 !Array.prototype.toLowerCase &&
   (Array.prototype.toLowerCase = function () {
     return this.map((str) =>
@@ -90,24 +91,24 @@
       (item, index) => arr.indexOf(JSON.stringify(item)) === index
     );
   });
-!Array.prototype.camelCase &&
-  (Array.prototype.camelCase = function ({
+!Array.prototype.toCamelCase &&
+  (Array.prototype.toCamelCase = function ({
     preserveConsecutiveUppercase = false,
   } = {}) {
     return this.filter((str) => typeof str == "string" && str.length > 0)
       .join("_")
       .toCamelCase({ preserveConsecutiveUppercase });
   });
-!Array.prototype.pascalCase &&
-  (Array.prototype.pascalCase = function ({
+!Array.prototype.toPascalCase &&
+  (Array.prototype.toPascalCase = function ({
     preserveConsecutiveUppercase = false,
   } = {}) {
     return this.filter((str) => typeof str == "string" && str.length > 0)
       .join("_")
       .toPascalCase({ preserveConsecutiveUppercase });
   });
-!Array.prototype.snakeCase &&
-  (Array.prototype.snakeCase = function () {
+!Array.prototype.toSnakeCase &&
+  (Array.prototype.toSnakeCase = function () {
     return this.filter((str) => typeof str == "string" && str.length > 0).join(
       "_"
     );

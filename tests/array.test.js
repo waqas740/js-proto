@@ -1,7 +1,7 @@
 require("../index.js");
 
 describe("Array", function () {
-  describe("#toFLUpperCase()", function () {
+  describe("#toCapitalize()", function () {
     it(
       "should return same array with first letter of  strings in uppercase",
       function () {
@@ -17,7 +17,7 @@ describe("Array", function () {
             "hello",
             "WORD",
             "lETTER",
-          ].toFLUpperCase()
+          ].toCapitalize()
         ).toStrictEqual([
           1,
           2,
@@ -29,39 +29,6 @@ describe("Array", function () {
           "Hello",
           "WORD",
           "LETTER",
-        ]);
-      }.bind(this)
-    );
-  });
-
-  describe("#toFLLowerCase()", function () {
-    it(
-      "should return same array with first letter of  strings in lowercase",
-      function () {
-        expect(
-          [
-            1,
-            2,
-            3,
-            "4",
-            [1, "3"],
-            { a: 1 },
-            "A",
-            "Hello",
-            "WORD",
-            "LETTER",
-          ].toFLLowerCase()
-        ).toStrictEqual([
-          1,
-          2,
-          3,
-          "4",
-          [1, "3"],
-          { a: 1 },
-          "a",
-          "hello",
-          "wORD",
-          "lETTER",
         ]);
       }.bind(this)
     );
