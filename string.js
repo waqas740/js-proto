@@ -143,6 +143,60 @@
   (String.prototype.chars = function () {
     return Array.from(this);
   });
+/**
+ * Escape string for use in HTML attributes.
+ */
+!String.prototype.escape &&
+  (String.prototype.escape = function () {
+    return this.replace(/[&<>"'`=\/]/g, function (s) {
+      return {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#x27;",
+        "/": "&#x2F;",
+        "`": "&#x60;",
+        "=": "&#x3D;",
+      }[s];
+    });
+  });
+/**
+ * Unescape string for use in HTML attributes.
+ */
+!String.prototype.unescape &&
+  (String.prototype.unescape = function () {
+    return this.replace(
+      /&amp;|&lt;|&gt;|&quot;|&#x27;|&#x2F;|&#x60;|&#x3D;/g,
+      function (s) {
+        return {
+          "&amp;": "&",
+          "&lt;": "<",
+          "&gt;": ">",
+          "&quot;": '"',
+          "&#x27;": "'",
+          "&#x2F;": "/",
+          "&#x60;": "`",
+          "&#x3D;": "=",
+        }[s];
+      }
+    );
+  });
+/**
+ * Words method is used to convert string to array of words
+ */
+!String.prototype.words &&
+  (String.prototype.words = function () {
+    return this.split(/\s+/);
+  });
+
+!String.prototype.hashCode &&
+  (String.prototype.hashCode = function () {
+    return this.split("").reduce((a, b) => {
+      a = (a << 5) - a + b.charCodeAt(0);
+      return a & a;
+    }, 0);
+  });
 
 /**
  * "Safer" String.toUpperCase()
