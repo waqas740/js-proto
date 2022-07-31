@@ -1,17 +1,17 @@
 /**
  * Capitalize case is text written with the first letter of first word capitalized
  *  */
-!String.prototype.toCapitalize &&
-  (String.prototype.toCapitalize = function () {
+!String.prototype.capitalize &&
+  (String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
   });
 
 /**
  * Proper case is text written with the first letter of each word capitalized
  *  */
-!String.prototype.toProperCase &&
-  (String.prototype.toProperCase = function () {
-    return lowerCase(this).replace(/^\w|\s\w/g, upperCase);
+!String.prototype.toTitleCase &&
+  (String.prototype.toTitleCase = function () {
+    return this.toLowerCase().replace(/^\w|\s\w/g, upperCase);
   });
 /**
  * Swap case is text with all letters changed to uppercase or lowercase depending on current case of letter (upper or lower)
@@ -19,7 +19,6 @@
 !String.prototype.toSwapCase &&
   (String.prototype.toSwapCase = function () {
     return this.replace(/[a-z]/gi, function (char) {
-      console.log(char);
       return char == char.toUpperCase()
         ? char.toLowerCase()
         : char.toUpperCase();
@@ -42,8 +41,7 @@
         return word.charAt(0).toUpperCase() + word.slice(1);
       })
       .join("");
-    camelCaseWord.charAt(0).toLowerCase() + this.slice(1);
-    return camelCaseWord;
+    return camelCaseWord.charAt(0).toLowerCase() + camelCaseWord.slice(1);
   });
 /**
  * Pascal case is text written with the first letter of each word capitalized and all other letters lowercase
@@ -76,7 +74,7 @@
  */
 !String.prototype.toSnakeCase &&
   (String.prototype.toSnakeCase = function () {
-    return this.split(/[^a-z]/)
+    return this.split(/[^a-zA-Z]/)
       .filter((word) => word)
       .join("_")
       .toLowerCase();
@@ -133,7 +131,7 @@
  */
 !String.prototype.camelToSnakeCase &&
   (String.prototype.camelToSnakeCase = function () {
-    return this.replace(/([A-Z])/g, "-$1").toLowerCase();
+    return this.replace(/([A-Z])/g, "_$1").toLowerCase();
   });
 /**
  * Chars methods are used to convert string to array of characters
@@ -204,6 +202,3 @@
 function upperCase(str) {
   return str.toUpperCase();
 }
-
-// pluralize(word)
-// chars(word)

@@ -1,3 +1,7 @@
+/** 
+ * Flip method for objects. 
+ 
+ */
 !Object.prototype.flip &&
   (Object.prototype.flip = function () {
     for (const [key, value] of Object.entries(this)) {
@@ -55,24 +59,24 @@
   (Object.prototype.values = function () {
     return Object.values(this);
   });
-!Object.prototype.firstCharUpperCase &&
-  (Object.prototype.firstCharUpperCase = function () {
-    Object.key(this).forEach((key) => {
-      this[key.firstCharUpperCase()];
+!Object.prototype.capitalize &&
+  (Object.prototype.capitalize = function () {
+    Object.keys(this).forEach((key) => {
+      this[key.capitalize()];
       delete this[key];
     });
   });
 
 !Object.prototype.lowerCase &&
   (Object.prototype.lowerCase = function () {
-    Object.key(this).forEach((key) => {
+    Object.keys(this).forEach((key) => {
       this[key.toLowerCase()];
       delete this[key];
     });
   });
 !Object.prototype.upperCase &&
   (Object.prototype.upperCase = function () {
-    Object.key(this).forEach((key) => {
+    Object.keys(this).forEach((key) => {
       this[key.toUpperCase()];
       delete this[key];
     });

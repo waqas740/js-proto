@@ -1,13 +1,11 @@
-!Array.prototype.toCapitalize &&
-  (Array.prototype.toCapitalize = function () {
-    return this.map((str) =>
-      typeof str == "string" ? str.toCapitalize() : str
-    );
+!Array.prototype.capitalize &&
+  (Array.prototype.capitalize = function () {
+    return this.map((str) => (typeof str == "string" ? str.capitalize() : str));
   });
-!Array.prototype.toProperCase &&
-  (Array.prototype.toProperCase = function () {
+!Array.prototype.toTitleCase &&
+  (Array.prototype.toTitleCase = function () {
     return this.map((str) =>
-      typeof str == "string" ? str.toProperCase() : str
+      typeof str == "string" ? str.toTitleCase() : str
     );
   });
 
