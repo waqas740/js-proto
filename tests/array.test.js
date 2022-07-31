@@ -1,35 +1,13 @@
 require("../index.js");
 
 describe("Array", function () {
-  describe("#toCapitalize()", function () {
+  describe("#capitalize()", function () {
     it(
       "should return same array with first letter of  strings in uppercase",
       function () {
         expect(
-          [
-            1,
-            2,
-            3,
-            "4",
-            [1, "3"],
-            { a: 1 },
-            "a",
-            "hello",
-            "WORD",
-            "lETTER",
-          ].toCapitalize()
-        ).toStrictEqual([
-          1,
-          2,
-          3,
-          "4",
-          [1, "3"],
-          { a: 1 },
-          "A",
-          "Hello",
-          "WORD",
-          "LETTER",
-        ]);
+          [1, 2, 3, "4", "a", "hello", "WORD", "lETTER"].capitalize()
+        ).toStrictEqual([1, 2, 3, "4", "A", "Hello", "WORD", "LETTER"]);
       }.bind(this)
     );
   });
@@ -199,44 +177,44 @@ describe("Array", function () {
       }.bind(this)
     );
   });
-  describe("#isEquivalent()", function () {
-    it(
-      "should return true if arrays are equivalent",
-      function () {
-        expect(
-          [
-            1,
-            2,
-            3,
-            "4",
-            [1, "3"],
-            { a: 1 },
-            null,
-            undefined,
-            [8],
-            "a",
-            "Hello",
-            "WORD",
-            "LeTTer",
-          ].isEquivalent([
-            1,
-            2,
-            3,
-            "4",
-            [1, "3"],
-            { a: 1 },
-            null,
-            undefined,
-            [8],
-            "a",
-            "Hello",
-            "WORD",
-            "LeTTer",
-          ])
-        ).toBe(true);
-      }.bind(this)
-    );
-  });
+  // describe("#isEquivalent()", function () {
+  //   it(
+  //     "should return true if arrays are equivalent",
+  //     function () {
+  //       expect(
+  //         [
+  //           1,
+  //           2,
+  //           3,
+  //           "4",
+  //           [1, "3"],
+  //           { a: 1 },
+  //           null,
+  //           undefined,
+  //           [8],
+  //           "a",
+  //           "Hello",
+  //           "WORD",
+  //           "LeTTer",
+  //         ].isEquivalent([
+  //           1,
+  //           2,
+  //           3,
+  //           "4",
+  //           [1, "3"],
+  //           { a: 1 },
+  //           null,
+  //           undefined,
+  //           [8],
+  //           "a",
+  //           "Hello",
+  //           "WORD",
+  //           "LeTTer",
+  //         ])
+  //       ).toBe(true);
+  //     }.bind(this)
+  //   );
+  // });
   describe("#unique()", function () {
     it(
       "should return unique array",
