@@ -2,82 +2,63 @@
  * Flip method for objects. 
  
  */
-!Object.prototype.flip &&
-  (Object.prototype.flip = function () {
-    for (const [key, value] of Object.entries(this)) {
-      this[value] = key;
-      delete this[key];
-    }
-  });
+const {
+  flip,
+  sort,
+  pick,
+  omit,
+  clone,
+  merge,
+  size,
+  keys,
+  values,
+  capitalizeKeys,
+  toLowerCaseKeys,
+  toUpperCaseKeys,
+} = require("./object/index");
+Object.prototype._flip = function () {
+  return flip(this);
+};
 
-!Object.prototype.sort &&
-  (Object.prototype.sort = function () {
-    return Object.keys(this)
-      .sort()
-      .reduce((obj, key) => {
-        obj[key] = this[key];
-        return obj;
-      }, {});
-  });
-!Object.prototype.pick &&
-  (Object.prototype.pick = function (path) {
-    const result = {};
-    for (let key of path) {
-      this[key] && (result[key] = this[key]);
-    }
-    return result;
-  });
-!Object.prototype.omit &&
-  (Object.prototype.omit = function (path) {
-    const result = Object.assign({}, this);
-    for (let key of path) {
-      delete result[key];
-    }
-    return result;
-  });
-!Object.prototype.clone &&
-  (Object.prototype.clone = function () {
-    return Object.assign({}, this);
-  });
-!Object.prototype.merge &&
-  (Object.prototype.merge = function () {
-    var _this = Object.assign({}, this);
-    Array.from(arguments).forEach(function (obj) {
-      Object.assign(_this, obj);
-    });
-    return _this;
-  });
-!Object.prototype.size &&
-  (Object.prototype.size = function () {
-    return Object.keys(this).length;
-  });
-!Object.prototype.keys &&
-  (Object.prototype.keys = function () {
-    return Object.keys(this);
-  });
-!Object.prototype.values &&
-  (Object.prototype.values = function () {
-    return Object.values(this);
-  });
-!Object.prototype.capitalize &&
-  (Object.prototype.capitalize = function () {
-    Object.keys(this).forEach((key) => {
-      this[key.capitalize()];
-      delete this[key];
-    });
-  });
+Object.prototype._sort = function () {
+  return sort(this);
+};
 
-!Object.prototype.lowerCase &&
-  (Object.prototype.lowerCase = function () {
-    Object.keys(this).forEach((key) => {
-      this[key.toLowerCase()];
-      delete this[key];
-    });
-  });
-!Object.prototype.upperCase &&
-  (Object.prototype.upperCase = function () {
-    Object.keys(this).forEach((key) => {
-      this[key.toUpperCase()];
-      delete this[key];
-    });
-  });
+Object.prototype._pick = function (keys) {
+  return pick(this, keys);
+};
+Object.prototype._omit = function (keys) {
+  return omit(this, keys);
+};
+
+Object.prototype._clone = function () {
+  return clone(this);
+};
+
+Object.prototype._merge = function () {
+  return merge(this, arguments);
+};
+
+Object.prototype._size = function () {
+  return size(this);
+};
+
+Object.prototype._keys = function () {
+  return keys(this);
+};
+
+Object.prototype._values = function () {
+  return values(this);
+};
+
+Object.prototype._capitalizeKeys = function () {
+  return capitalizeKeys(this);
+};
+
+Object.prototype._toLowerCaseKeys = function () {
+  return toLowerCaseKeys(this);
+};
+
+Object.prototype._toUpperCaseKeys = function () {
+  return toUpperCaseKeys(this);
+};

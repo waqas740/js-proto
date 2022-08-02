@@ -6,7 +6,7 @@ describe("Array", function () {
       "should return same array with first letter of  strings in uppercase",
       function () {
         expect(
-          [1, 2, 3, "4", "a", "hello", "WORD", "lETTER"].capitalize()
+          [1, 2, 3, "4", "a", "hello", "WORD", "lETTER"]._capitalize()
         ).toStrictEqual([1, 2, 3, "4", "A", "Hello", "WORD", "LETTER"]);
       }.bind(this)
     );
@@ -28,7 +28,7 @@ describe("Array", function () {
             "hello",
             "WORD",
             "LeTtER",
-          ].toLowerCase()
+          ]._toLowerCase()
         ).toStrictEqual([
           1,
           2,
@@ -61,7 +61,7 @@ describe("Array", function () {
             "Hello",
             "WORD",
             "LeTTer",
-          ].toUpperCase()
+          ]._toUpperCase()
         ).toStrictEqual([
           1,
           2,
@@ -96,7 +96,7 @@ describe("Array", function () {
             "Hello",
             "WORD",
             "LeTTer",
-          ].sum()
+          ]._sum()
         ).toBe(6);
       }.bind(this)
     );
@@ -120,7 +120,7 @@ describe("Array", function () {
             "Hello",
             "WORD",
             "LeTTer",
-          ].min()
+          ]._min()
         ).toBe(1);
       }.bind(this)
     );
@@ -144,7 +144,7 @@ describe("Array", function () {
             "Hello",
             "WORD",
             "LeTTer",
-          ].max()
+          ]._max()
         ).toBe(3);
       }.bind(this)
     );
@@ -168,7 +168,7 @@ describe("Array", function () {
             "Hello",
             "WORD",
             "LeTTer",
-          ].chunk(5)
+          ]._chunk(5)
         ).toStrictEqual([
           [1, 2, 3, "4", [1, "3"]],
           [{ a: 1 }, null, undefined, [8], "a"],
@@ -239,7 +239,7 @@ describe("Array", function () {
             "LeTTer",
             [8],
             "LeTTer",
-          ].unique()
+          ]._unique()
         ).toStrictEqual([
           1,
           2,

@@ -1,204 +1,146 @@
 /**
  * Capitalize case is text written with the first letter of first word capitalized
  *  */
-!String.prototype.capitalize &&
-  (String.prototype.capitalize = function () {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-  });
+
+const {
+  capitalize,
+  toTitleCase,
+  toSwapCase,
+  toCamelCase,
+  toPascalCase,
+  toDotCase,
+  toSnakeCase,
+  toSlugCase,
+  truncate,
+  isJson,
+  camelToSnakeCase,
+  chars,
+  escape,
+  unescape,
+  hashCode,
+  words,
+  mask,
+} = require("./string/index");
+
+String.prototype._capitalize = function () {
+  return capitalize(this);
+};
 
 /**
  * Proper case is text written with the first letter of each word capitalized
  *  */
-!String.prototype.toTitleCase &&
-  (String.prototype.toTitleCase = function () {
-    return this.toLowerCase().replace(/^\w|\s\w/g, upperCase);
-  });
+
+String.prototype._toTitleCase = function () {
+  return toTitleCase(this);
+};
 /**
  * Swap case is text with all letters changed to uppercase or lowercase depending on current case of letter (upper or lower)
  */
-!String.prototype.toSwapCase &&
-  (String.prototype.toSwapCase = function () {
-    return this.replace(/[a-z]/gi, function (char) {
-      return char == char.toUpperCase()
-        ? char.toLowerCase()
-        : char.toUpperCase();
-    });
-  });
+
+String.prototype._toSwapCase = function () {
+  return toSwapCase(this);
+};
 /**
  * Camel case is text with all words capitalized and separated by a single space character
  * (e.g. "Hello World") to "helloWorld"
  */
-!String.prototype.toCamelCase &&
-  (String.prototype.toCamelCase = function ({
-    preserveConsecutiveUppercase = false,
-  } = {}) {
-    var camelCaseWord = this.split(/[^a-zA-Z]/)
-      .filter((word) => word)
-      .map((word) => {
-        word = preserveConsecutiveUppercase
-          ? word.trim()
-          : word.toLowerCase().trim();
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-      .join("");
-    return camelCaseWord.charAt(0).toLowerCase() + camelCaseWord.slice(1);
-  });
+
+String.prototype._toCamelCase = function ({
+  preserveConsecutiveUppercase = false,
+} = {}) {
+  return toCamelCase(this, { preserveConsecutiveUppercase });
+};
 /**
  * Pascal case is text written with the first letter of each word capitalized and all other letters lowercase
  */
-!String.prototype.toPascalCase &&
-  (String.prototype.toPascalCase = function ({
-    preserveConsecutiveUppercase = false,
-  } = {}) {
-    return this.split(/[^a-zA-Z]/)
-      .filter((word) => word)
-      .map((word) => {
-        word = preserveConsecutiveUppercase
-          ? word.trim()
-          : word.toLowerCase().trim();
-        return word.charAt(0).toUpperCase() + word.slice(1);
-      })
-      .join("");
-  });
+
+String.prototype._toPascalCase = function ({
+  preserveConsecutiveUppercase = false,
+} = {}) {
+  return toPascalCase(this, { preserveConsecutiveUppercase });
+};
 /**
  * Dot case is text with all letters changed to lowercase and all words separated by a dot character (.)
  */
-!String.prototype.toDotCase &&
-  (String.prototype.toDotCase = function () {
-    return this.split(/[^a-zA-Z]/)
-      .filter((word) => word)
-      .join(".");
-  });
+
+String.prototype._toDotCase = function () {
+  return toDotCase(this);
+};
 /**
  * Snake case is text with all letters changed to lowercase and all words separated by a single underscore character (_)
  */
-!String.prototype.toSnakeCase &&
-  (String.prototype.toSnakeCase = function () {
-    return this.split(/[^a-zA-Z]/)
-      .filter((word) => word)
-      .join("_")
-      .toLowerCase();
-  });
+
+String.prototype._toSnakeCase = function () {
+  return toSnakeCase(this);
+};
 /**
  * Slug case is text with all letters changed to lowercase and all words separated by a dash character (-)
  */
-!String.prototype.toSlugCase &&
-  (String.prototype.toSlugCase = function () {
-    return this.split(/[^a-zA-Z0-9]/)
-      .filter((word) => word)
-      .join("-")
-      .toLowerCase();
-  });
+
+String.prototype._toSlugCase = function () {
+  return toSlugCase(this);
+};
 /**
  * The truncate method truncates the given string to the specified length:
  *  if the string is shorter than the length, it is returned unchanged.
  *  If it is longer, it is truncated and ellipsis (…) is added.
  * If the length is 0, the string is returned empty.
  */
-!String.prototype.truncate &&
-  (String.prototype.truncate = function (limit) {
-    const length = this.length;
-    const truncated = this.substring(0, limit);
-    return length > limit ? truncated + "..." : truncated;
-  });
+
+String.prototype._truncate = function (limit) {
+  return truncate(this, limit);
+};
 
 /**
  * The mask method masks a portion of a string with a repeated character, and may be used to obfuscate segments of strings such as email addresses and phone numbers: 
 
  */
-!String.prototype.mask &&
-  (String.prototype.mask = function (limit, mask) {
-    const length = this.length;
-    const subString = this.substring(0, limit);
-    return length > limit
-      ? subString + new Array(length - limit).fill(mask ? mask : "*").join("")
-      : subString;
-  });
+
+String.prototype._mask = function (limit, maskKey) {
+  return mask(this, limit, maskKey);
+};
 /**
  * IsJson method checks if the string is a valid JSON string or not and returns true or false
  */
-!String.prototype.isJson &&
-  (String.prototype.isJson = function () {
-    try {
-      JSON.parse(this);
-      return true;
-    } catch (e) {
-      return false;
-    }
-  });
+String.prototype._isJson = function () {
+  return isJson(this);
+};
 /**
  * camelToSnakeCase converts a camelCase string to snake_case string and returns it as a string
  */
-!String.prototype.camelToSnakeCase &&
-  (String.prototype.camelToSnakeCase = function () {
-    return this.replace(/([A-Z])/g, "_$1").toLowerCase();
-  });
+
+String.prototype._camelToSnakeCase = function () {
+  return camelToSnakeCase(this);
+};
 /**
  * Chars methods are used to convert string to array of characters
  */
 
-!String.prototype.chars &&
-  (String.prototype.chars = function () {
-    return Array.from(this);
-  });
+String.prototype._chars = function () {
+  return chars(this);
+};
 /**
  * Escape string for use in HTML attributes.
  */
-!String.prototype.escape &&
-  (String.prototype.escape = function () {
-    return this.replace(/[&<>"'`=\/]/g, function (s) {
-      return {
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#x27;",
-        "/": "&#x2F;",
-        "`": "&#x60;",
-        "=": "&#x3D;",
-      }[s];
-    });
-  });
+
+String.prototype._escape = function () {
+  return escape(this);
+};
 /**
  * Unescape string for use in HTML attributes.
  */
-!String.prototype.unescape &&
-  (String.prototype.unescape = function () {
-    return this.replace(
-      /&amp;|&lt;|&gt;|&quot;|&#x27;|&#x2F;|&#x60;|&#x3D;/g,
-      function (s) {
-        return {
-          "&amp;": "&",
-          "&lt;": "<",
-          "&gt;": ">",
-          "&quot;": '"',
-          "&#x27;": "'",
-          "&#x2F;": "/",
-          "&#x60;": "`",
-          "&#x3D;": "=",
-        }[s];
-      }
-    );
-  });
+
+String.prototype._unescape = function () {
+  return unescape(this);
+};
 /**
  * Words method is used to convert string to array of words
  */
-!String.prototype.words &&
-  (String.prototype.words = function () {
-    return this.split(/\s+/);
-  });
 
-!String.prototype.hashCode &&
-  (String.prototype.hashCode = function () {
-    return this.split("").reduce((a, b) => {
-      a = (a << 5) - a + b.charCodeAt(0);
-      return a & a;
-    }, 0);
-  });
+String.prototype._words = function () {
+  return words(this);
+};
 
-/**
- * "Safer" String.toUpperCase()
- */
-function upperCase(str) {
-  return str.toUpperCase();
-}
+String.prototype._hashCode = function () {
+  return hashCode(this);
+};

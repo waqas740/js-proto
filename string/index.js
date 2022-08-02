@@ -1,0 +1,20 @@
+module.exports = {
+  capitalize: require("./capitalize"),
+  toCamelCase: require("./toCamelCase"),
+  toSwapCase: require("./toSwapCase"),
+  toDotCase: require("./toDotCase"),
+  toPascalCase: require("./toPascalCase"),
+  toSnakeCase: require("./toSnakeCase"),
+  toTitleCase: require("./toTitleCase"),
+  toSlugCase: require("./toSlugCase"),
+  truncate: require("./truncate"),
+  isJson: require("./isJson"),
+  camelToSnakeCase: require("./camelToSnakeCase"),
+  chars: require("./chars"),
+  escape: require("./escape"),
+  unescape: require("./unescape"),
+  words: require("./words"),
+  hashCode: require("./hashCode"),
+
+  mask: require("./mask"),
+};
