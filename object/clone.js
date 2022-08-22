@@ -1,3 +1,3 @@
 module.exports = (object) => {
-  return Object.assign({}, object);
+  return JSON.parse(JSON.stringify(object));
 };

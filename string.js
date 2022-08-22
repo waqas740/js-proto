@@ -22,6 +22,11 @@ const {
   mask,
 } = require("./string/index");
 
+/**
+ *
+ *
+ * _capitalize method capitalizes the first letter of the string
+ */
 String.prototype._capitalize = function () {
   return capitalize(this);
 };
@@ -43,6 +48,7 @@ String.prototype._toSwapCase = function () {
 /**
  * Camel case is text with all words capitalized and separated by a single space character
  * (e.g. "Hello World") to "helloWorld"
+ * camelCase method converts the string to camel case format,
  */
 
 String.prototype._toCamelCase = function ({

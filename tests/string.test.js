@@ -10,24 +10,6 @@ describe("String", function () {
       }.bind(this)
     );
   });
-  describe("#toLowerCase()", function () {
-    it(
-      "should return same string with all letters in lowercase",
-      function () {
-        expect("Hello World".toLowerCase()).toStrictEqual("hello world");
-        expect("hello World".toLowerCase()).toStrictEqual("hello world");
-      }.bind(this)
-    );
-  });
-  describe("#toUpperCase()", function () {
-    it(
-      "should return same string with all letters in uppercase",
-      function () {
-        expect("hello World".toUpperCase()).toStrictEqual("HELLO WORLD");
-        expect("Hello World".toUpperCase()).toStrictEqual("HELLO WORLD");
-      }.bind(this)
-    );
-  });
   describe("#toSwapCase()", function () {
     it(
       "should return string with capitalized letters and lowercase letters switched",
@@ -212,3 +194,5 @@ describe("String", function () {
     );
   });
 });
+
+const a = ["h", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"];

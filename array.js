@@ -23,9 +23,15 @@ const {
   at,
 } = require("./array/index");
 
+/**
+ * capitalize - capitalize first letter each element in array if it is a string
+ */
 Array.prototype._capitalize = function () {
   return capitalize(this);
 };
+/**
+ * toTitleCase - capitalize first letter each element in array if it is a string
+ */
 
 Array.prototype._toTitleCase = function () {
   return toTitleCase(this);
@@ -114,11 +120,3 @@ Array.prototype._deletedAt = function (index) {
 Array.prototype._at = function (index) {
   return at(this, index);
 };
-// var arr = ["OR", ["<", "a", "b"], ["AND", ["==", "c", "d"], ["!=", "e", "f"]]];
-// ["OR", ["<", "a", "b"], ["AND", ["==", "c", "d"], ["!=", "e", "f"]]];
-
-// to: "a < b OR (c == d AND e != f)";
-
-// function createExpression(arr) {
-//   return arr[1] + arr[0] + arr[2];
-// }
