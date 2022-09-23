@@ -1,19 +1,19 @@
 ## Add common method in Array,Object and String proptotype
 
-- js-proto added some helper function with underscore(\_) prefix into prototype of Array/string/Object.
+- proto.underscore added some helper function with underscore(\_) prefix into prototype of Array/string/Object.
 - All methoad are immutable.
 
 ## Installation
 
 ```sh
-npm i js-proto --save
+npm i proto.underscore --save
 node app
 ```
 
 ## Usage
 
 ```sh
-const proto = require('js-proto');
+const proto = require('proto.underscore');
 proton.init({Array:true,Object:true,String:true});
 
 ```
