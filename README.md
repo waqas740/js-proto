@@ -8,7 +8,7 @@
 ## Installation
 
 ```sh
-npm i js-proto
+npm i js-proto --save
 node app
 ```
 
@@ -215,4 +215,234 @@ console.log(updatedWord); // output: ["hello", "World"]
 const word = "hello World";
 const updatedWord = word._toTitleCase();
 console.log(updatedWord); // output: Hello World
+```
+
+### Object Methods
+
+- \_flip
+
+```javascript
+const object = { a: 1, b: 2 };
+const updatedObject = object._toTitleCase();
+console.log(updatedObject); // output: { 1: "a", 2: "b" }
+```
+
+- \_sort
+
+```javascript
+const object = { a: 2, b: 1 };
+const updatedObject = object._sort();
+console.log(updatedObject); // output: { b:1,a:2 };
+```
+
+- \_pick
+
+```javascript
+const object = { a: 1, b: 2 };
+const updatedObject = object._pick(["a"]);
+console.log(updatedObject); // output: {a:1}
+```
+
+- \_omit
+
+```javascript
+const object = { a: 1, b: 2 };
+const updatedObject = object._omit(["a"]);
+console.log(updatedObject); // output: {b:2}
+```
+
+- \_clone
+
+```javascript
+const object = { a: 1, b: 2 };
+const cloneObject = object._clone();
+console.log(cloneObject); // output: { a: 1, b: 2 }
+```
+
+- \_merge
+
+```javascript
+const object = { a: 1, b: 2 };
+const mergedObject = object._merge({ a: 3, c: 4 });
+console.log(mergedObject); // output: { a: 3, b: 2,c:4 }
+```
+
+- \_size
+
+```javascript
+const object = { a: 1, b: 2, c: 4 };
+const sizeofObject = object._size();
+console.log(sizeofObject); // output: 3
+```
+
+- \_keys
+
+```javascript
+const object = { a: 1, b: 2, c: 4 };
+const objectKeys = object._keys();
+console.log(objectKeys); // output: [a,b,c]
+```
+
+- \_values
+
+```javascript
+const object = { a: 1, b: 2, c: 4 };
+const objectValues = object._values();
+console.log(objectValues); // output: [1,2,4]
+```
+
+- \_capitalizeKeys
+
+```javascript
+const object = { HelloWord: "HelloWord", capWord: "capWord" };
+const updateObject = object._capitalizeKeys();
+console.log(updateObject); // output: { "helloWord": "HelloWord","capWord":"capWord"};;
+```
+
+- \_toLowerCaseKeys
+
+```javascript
+const object = { HelloWord: "HelloWord", capWord: "capWord" };
+const updateObject = object._toLowerCaseKeys();
+console.log(updateObject); // output: { "Helloword": "HelloWord","capword":"capWord"}
+```
+
+- \_toUpperCaseKeys
+
+```javascript
+const object = { HelloWord: "HelloWord", capWord: "capWord" };
+const updateObject = object._toUpperCaseKeys();
+console.log(updateObject); // output: { "HELLOWORD": "HelloWord","CAPWORD":"capWord"}
+```
+
+### Array Methods
+
+- \_capitalize
+
+```javascript
+const array = [1, 2, 3, "4", "a", "hello", "WORD", "lETTER"];
+const updateArray = array._capitalize();
+console.log(updateArray); // output: [1, 2, 3, "4", "A", "Hello", "WORD", "LETTER"]
+```
+
+- \_toLowerCase
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  { a: 1 },
+  "A",
+  "hello",
+  "WORD",
+  "LeTtER",
+];
+const updateArray = array._toLowerCase();
+console.log(updateArray); // output: [1,2,3,"4",[1, "3"],{ a: 1 }, "a", "hello","word", "letter"]
+```
+
+- \_toUpperCase
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  { a: 1 },
+  "A",
+  "hello",
+  "WORD",
+  "LeTtER",
+];
+const updateArray = array._toUpperCase();
+console.log(updateArray); // output: [1,2,3,"4",[1, "3"],{ a: 1 },"A", "HELLO","WORD","LETTER"]
+```
+
+- \_sum
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  { a: 1 },
+  "A",
+  "hello",
+  "WORD",
+  "LeTtER",
+];
+const sum = array._sum();
+console.log(sum); // output:6
+```
+
+- \_min
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  { a: 1 },
+  "A",
+  "hello",
+  "WORD",
+  "LeTtER",
+];
+const min = array._min();
+console.log(min); // output:1
+```
+
+- \_chunk
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  { a: 1 },
+  "A",
+  "hello",
+  "WORD",
+  "LeTtER",
+];
+const chunk = array._chunk(5);
+console.log(chunk); // output:[[1,2,3,"4",[1, "3"]],[{ a: 1 }, "A","hello","WORD", "LeTtER"]]
+```
+
+- \_unique
+
+```javascript
+const array = [
+  1,
+  2,
+  3,
+  "4",
+  [1, "3"],
+  2,
+  "4",
+  { a: 1 },
+  { a: 1 },
+  null,
+  undefined,
+  [8],
+  "a",
+  "A",
+  "a",
+  "LeTTer",
+  [8],
+  "LeTTer",
+];
+const chunk = array._unique();
+console.log(chunk); // output:[1,2,3,"4",[1,"3"],{a:1},null, undefined,[8],"a", "A","LeTTer"]
 ```
