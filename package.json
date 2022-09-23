@@ -1,6 +1,6 @@
 {
-  "name": "js-proto",
-  "version": "1.0.0",
+  "name": "proto.underscore",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/waqas740/js-proto.git"
+    "url": "git+https://github.com/waqas740/proto.underscore.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/waqas740/js-proto/issues"
+    "url": "https://github.com/waqas740/proto.underscore/issues"
   },
-  "homepage": "https://github.com/waqas740/js-proto#readme",
+  "homepage": "https://github.com/waqas740/proto.underscore#readme",
   "devDependencies": {
     "jest": "^28.1.2"
   }

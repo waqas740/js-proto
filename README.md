@@ -1,5 +1,3 @@
-# js-proto
-
 ## Add common method in Array,Object and String proptotype
 
 - js-proto added some helper function with underscore(\_) prefix into prototype of Array/string/Object.
