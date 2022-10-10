@@ -1,7 +1,7 @@
 ## Add common method in Array,Object and String proptotype
 
 - proto.underscore added some helper function with underscore(\_) prefix into prototype of Array/string/Object.
-- All methoad are immutable.
+- All method are immutable.
 
 ## Installation
 
@@ -58,29 +58,29 @@ proto.init({Array:true,Object:true,String:true});
 
 ### Array Method
 
-| Method         | Description                                                 |
-| -------------- | ----------------------------------------------------------- |
-| \_capitalize   | convert each element to capitalize if element is a string   |
-| \_toTitleCase  | convert each element to title case if element is a string   |
-| \_toLowerCase  | convert each element to lower case if element is a string   |
-| \_toUpperCase  | convert each element to lower case if element is a string   |
-| \_toCamelCase  | convert each element to lower case if element is a string   |
-| \_toPascalCase | convert each element to pasacal case if element is a string |
-| \_toSnakeCase  | convert each element to snake case if element is a string   |
-| \_toSlugCase   | convert each element to slug case if element is a string    |
-| \_sum          | sum of all integer elemnet in the array                     |
-| \_min          | find min number with the array                              |
-| \_max          | find max number with the array                              |
-| \_random       | get random element of the array                             |
-| \_chunk        | create chunk of array                                       |
-| \_isEquivalent | check the array is equivalent to another array              |
-| \_head         | get first elemenyt of array                                 |
-| \_last         | get last element of array                                   |
-| \_fromPairs    | To swap the keys and values in an object                    |
-| \_hashCode     | To swap the keys and values in an object                    |
-| \_insert       | insert data into specific index                             |
-| \_deleteAt     | delete data from specific index                             |
-| \_at           | get element data from specfic index                         |
+| Method         | Description                                                |
+| -------------- | ---------------------------------------------------------- |
+| \_capitalize   | convert each element to capitalize if element is a string  |
+| \_toTitleCase  | convert each element to title case if element is a string  |
+| \_toLowerCase  | convert each element to lower case if element is a string  |
+| \_toUpperCase  | convert each element to lower case if element is a string  |
+| \_toCamelCase  | convert each element to lower case if element is a string  |
+| \_toPascalCase | convert each element to pascal case if element is a string |
+| \_toSnakeCase  | convert each element to snake case if element is a string  |
+| \_toSlugCase   | convert each element to slug case if element is a string   |
+| \_sum          | sum of all integer element in the array                    |
+| \_min          | find min number with the array                             |
+| \_max          | find max number with the array                             |
+| \_random       | get random element of the array                            |
+| \_chunk        | create chunk of array                                      |
+| \_isEquivalent | check the array is equivalent to another array             |
+| \_head         | get first element of array                                 |
+| \_last         | get last element of array                                  |
+| \_fromPairs    | To swap the keys and values in an object                   |
+| \_hashCode     | To swap the keys and values in an object                   |
+| \_insert       | insert data into specific index                            |
+| \_deleteAt     | delete data from specific index                            |
+| \_at           | get element data from specific index                       |
 
 ## Examples
 
