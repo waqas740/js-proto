@@ -7,7 +7,6 @@
 
 ```sh
 npm i proto.underscore --save
-node app
 ```
 
 ## Usage
