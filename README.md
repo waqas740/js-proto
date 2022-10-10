@@ -14,7 +14,7 @@ node app
 
 ```sh
 const proto = require('proto.underscore');
-proton.init({Array:true,Object:true,String:true});
+proto.init({Array:true,Object:true,String:true});
 
 ```
 
@@ -181,14 +181,6 @@ console.log(updatedWord); // output: true
 const word = "helloWorld";
 const updatedWord = word._camelToSnakeCase();
 console.log(updatedWord); // output: hello_world
-```
-
-- \_chars
-
-```javascript
-const word = "hello World";
-const updatedWord = word._chars();
-console.log(updatedWord); // output: ["h", "e", "l", "l", "o", " ", "W", "o", "r", "l", "d"]
 ```
 
 - \_chars
