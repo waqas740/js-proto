@@ -21,79 +21,108 @@ const {
  *
  * flip key and value of an object
  */
-Object.prototype._flip = function () {
-  return flip(this);
-};
+Object.defineProperty(Object.prototype, "_flip", {
+  value: function () {
+    return flip(this);
+  },
+});
+
 /**
  *
  * Sort an object by keys
  */
-Object.prototype._sort = function () {
-  return sort(this);
-};
+Object.defineProperty(Object.prototype, "_sort", {
+  value: function () {
+    return sort(this);
+  },
+});
+
 /**
  * pick specific keys from an object
  */
-
-Object.prototype._pick = function (keys) {
-  return pick(this, keys);
-};
+Object.defineProperty(Object.prototype, "_pick", {
+  value: function (keys) {
+    return pick(this, keys);
+  },
+});
 /**
  * omit specific keys from an object
  */
-Object.prototype._omit = function (keys) {
-  return omit(this, keys);
-};
+Object.defineProperty(Object.prototype, "_omit", {
+  value: function (keys) {
+    return omit(this, keys);
+  },
+});
 /**
  *
  */
-Object.prototype._clone = function () {
-  return clone(this);
-};
+Object.defineProperty(Object.prototype, "_clone", {
+  value: function () {
+    return clone(this);
+  },
+});
 
-Object.prototype._merge = function () {
-  return merge(this, arguments);
-};
+Object.defineProperty(Object.prototype, "_merge", {
+  value: function () {
+    return merge(this, arguments);
+  },
+});
 
 /**
  *
  * Get the size of an object like number of keys
  */
-Object.prototype._size = function () {
-  return size(this);
-};
+Object.defineProperty(Object.prototype, "_size", {
+  value: function () {
+    return size(this);
+  },
+});
+
 /**
  *
  * get all keys from an object
  */
-Object.prototype._keys = function () {
-  return keys(this);
-};
+Object.defineProperty(Object.prototype, "_keys", {
+  value: function () {
+    return keys(this, keys);
+  },
+});
+
 /**
  *
  * Get all values from an object
  */
-Object.prototype._values = function () {
-  return values(this);
-};
+Object.defineProperty(Object.prototype, "_values", {
+  value: function () {
+    return values(this);
+  },
+});
+
 /**
  *
  * convert all keys to title case
  */
+Object.defineProperty(Object.prototype, "_capitalizeKeys", {
+  value: function () {
+    return capitalizeKeys(this);
+  },
+});
 
-Object.prototype._capitalizeKeys = function () {
-  return capitalizeKeys(this);
-};
 /**
  * Convert all keys to lower case
  */
-Object.prototype._toLowerCaseKeys = function () {
-  return toLowerCaseKeys(this);
-};
+Object.defineProperty(Object.prototype, "_toLowerCaseKeys", {
+  value: function () {
+    return toLowerCaseKeys(this);
+  },
+});
+
 /**
  *
  * Convert all keys to upper case
  */
-Object.prototype._toUpperCaseKeys = function () {
-  return toUpperCaseKeys(this);
-};
+Object.defineProperty(Object.prototype, "_toUpperCaseKeys", {
+  value: function () {
+    return toUpperCaseKeys(this);
+  },
+});
