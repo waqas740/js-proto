@@ -1,4 +1,4 @@
-require("../index.js");
+require("../index.js").init();
 
 describe("String", function () {
   describe("#capitalize()", function () {

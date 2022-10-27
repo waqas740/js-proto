@@ -1,4 +1,4 @@
-require("../index.js");
+require("../index.js").init();
 
 describe("Object", function () {
   describe("#flip()", function () {

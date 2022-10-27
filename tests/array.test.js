@@ -1,4 +1,4 @@
-require("../index.js");
+require("../index.js").init();
 
 describe("Array", function () {
   describe("#capitalize()", function () {

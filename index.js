@@ -17,15 +17,14 @@ module.exports.init = (options) => {
       );
     }
 
-    (!options.hasOwnProperty("Array") || !options.Array == false) &&
+    (!options.hasOwnProperty("Array") || options.Array == false) &&
       (addArrayProto = false);
-    (!options.hasOwnProperty("Object") || !options.Object == false) &&
+    (!options.hasOwnProperty("Object") || options.Object == false) &&
       (addObjectProto = false);
-    (!options.hasOwnProperty("String") || !options.String == false) &&
+    (!options.hasOwnProperty("String") || options.String == false) &&
       (addStringProto = false);
   }
   addArrayProto && require("./array");
   addObjectProto && require("./object");
   addStringProto && require("./string");
 };
-module.exports.init();
