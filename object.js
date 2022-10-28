@@ -72,7 +72,7 @@ Object.defineProperty(Object.prototype, "_merge", {
  *
  * Get the size of an object like number of keys
  */
-Object.defineProperty(Object.prototype, "_length", {
+Object.defineProperty(Object.prototype, "_keys_count", {
   value: function () {
     return size(this);
   },
