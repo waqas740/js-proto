@@ -49,7 +49,7 @@ proto.init({Array:true,Object:true,String:true});
 | \_omit            | omit specific keys from an object                            |
 | \_clone           | deep clone                                                   |
 | \_merge           | merge multiple object                                        |
-| \_\_keys_count    | get the size of an object like number of keys                |
+| \_keys_count      | get the size of an object like number of keys                |
 | \_keys            | get all keys from an object. it's equal to Object.keys()     |
 | \_values          | get all values from an object. it's equal to Object.values() |
 | \_capitalizeKeys  | convert all keys to title case                               |
