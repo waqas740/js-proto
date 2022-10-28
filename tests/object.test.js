@@ -64,11 +64,11 @@ describe("Object", function () {
       }.bind(this)
     );
   });
-  describe("#size()", function () {
+  describe("#length()", function () {
     it(
       "should return object size",
       function () {
-        expect({ a: 1, b: 2 }._size()).toStrictEqual(2);
+        expect({ a: 1, b: 2 }._length()).toStrictEqual(2);
       }.bind(this)
     );
   });

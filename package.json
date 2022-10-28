@@ -1,6 +1,6 @@
 {
   "name": "proto.underscore",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Added some helper function with underscore(_) prefix into prototype of Array/string/Object.",
   "main": "index.js",
   "scripts": {

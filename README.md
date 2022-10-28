@@ -49,7 +49,7 @@ proto.init({Array:true,Object:true,String:true});
 | \_omit            | omit specific keys from an object                            |
 | \_clone           | deep clone                                                   |
 | \_merge           | merge multiple object                                        |
-| \_size            | get the size of an object like number of keys                |
+| \_\_length        | get the size of an object like number of keys                |
 | \_keys            | get all keys from an object. it's equal to Object.keys()     |
 | \_values          | get all values from an object. it's equal to Object.values() |
 | \_capitalizeKeys  | convert all keys to title case                               |
@@ -256,11 +256,11 @@ const mergedObject = object._merge({ a: 3, c: 4 });
 console.log(mergedObject); // output: { a: 3, b: 2,c:4 }
 ```
 
-- \_size
+- \_length
 
 ```javascript
 const object = { a: 1, b: 2, c: 4 };
-const sizeofObject = object._size();
+const sizeofObject = object._length();
 console.log(sizeofObject); // output: 3
 ```
 
