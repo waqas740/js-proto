@@ -1,7 +1,7 @@
-## Add common method in Array,Object and String proptotype
+## Add common methods in Array,Object and String prototype
 
-- proto.underscore added some helper function with underscore(\_) prefix into prototype of Array/string/Object.
-- All method are immutable.
+- proto.underscore added some helper functions with underscore(\_) prefix into prototype of Array/String/Object.
+- All methods are immutable.
 
 ## Installation
 
@@ -14,8 +14,14 @@ npm i proto.underscore --save
 ```sh
 const proto = require('proto.underscore');
 proto.init({Array:true,Object:true,String:true});
-
 ```
+
+## Note
+
+- If no arguments are passed, all functions will be added to the Array, Object, and String prototypes.
+- If you pass an empty object({}) as an argument to the init method, functions will not be added to the prototype.
+- If you only want to add functions to an array prototype, use the init function like `proto.init({Array:true,Object:false,String:fasle}); or proto.init({Array:true});`
+- In the package's init method, use Array,Object,String instead of array,object,string as the key of the passed Object. If you enter the wrong key, the methods will not be added to the prototype.
 
 ## Methods
 
