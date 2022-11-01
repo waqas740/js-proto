@@ -7,12 +7,18 @@
 
 ```sh
 npm i proto.underscore --save
+//or with yarn
+yarn add proto.underscore
 ```
 
 ## Usage
 
 ```sh
+//CommonJS
 const proto = require('proto.underscore');
+proto.init({Array:true,Object:true,String:true});
+//ES6
+import proto from 'proto.underscore'
 proto.init({Array:true,Object:true,String:true});
 ```
 
